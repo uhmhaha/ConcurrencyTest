@@ -1,6 +1,6 @@
 package com.kakao.assignment.vo;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
@@ -22,12 +22,12 @@ public class InvestAsset {
 	private Long assetCurrentAmount;
 	private Long investorNumbers;
 	private String assetStatus;
-	private Date assetValidFromDate;
-	private Date assetValidToDate;
+	private LocalDateTime assetValidFromDate;
+	private LocalDateTime assetValidToDate;
 	
 	@Builder
 	public InvestAsset(Long id, String assetTitle, Long assetTotalAmount, Long assetCurrentAmount,
-			Long investorNumbers, String assetStatus, Date assetValidFromDate, Date assetValidToDate) {
+			Long investorNumbers, String assetStatus, LocalDateTime assetValidFromDate, LocalDateTime assetValidToDate) {
 		this.id = id;
 		this.assetTitle = assetTitle;
 		this.assetTotalAmount = assetTotalAmount;
