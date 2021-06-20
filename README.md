@@ -20,13 +20,23 @@
 
 ## 핵심 문제해결 전략 및 분석한 내용
 * 분석내용 
-    * Database 선정 : Perfomance의 극대화 및 Concurrency 제어를 위해서 REDIS database를 선정 
-	* DB Lock 부분 : Select for update
+    * Database 선정 : 
+    	* 다수의 서버에서 다수의 인스턴스(MSA)로 동작하더라도 기능에 문제가 없도 록 설계되어야하고,
+    	* 순식간에 폭발적인 Traffic 이 예상
+    	* 또한 합계금액을 확인하여 금액이 넘을 시 sold-out을 구현해야함
+    	* Perfomance의 극대화 및 Concurrency 제어를 위해서 REDIS database를 선정 
+	* DB Lock 및 Transaction 부분 : ( DB Lock : oracle등의 Select for update와 유사 )
+	```
+	redisOperations.watch(hashKey); //key를 watch하다 값이 바뀌면 exception
+	redisOperations.multi();        //transaction start
+	redisOperations.discard();      // rollbak
+	redisOperations.exec();         // transaction commit
+	```
     * Redis key관리 : 일부키를 조회하여 관련 Data를 조회하도록 key 규칙( invest :{userid}:{assetId} )
 	```
-	test
-	```
-    * 참고 : https://redis.io/topics/transactions
+  	invest:kakaopay002:1
+  	invest:kakaopay001:1
+    ```
 
 ## Scenarios - REST APIs
 
