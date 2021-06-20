@@ -30,8 +30,8 @@
     ```
     * 3. Redis key관리 : 일부키를 조회하여 관련 Data를 조회하도록 key 규칙( invest :{userid}:{assetId} )
 	```
-     "invest:kakaopay002:1"
-     "invest:kakaopay001:1"
+      invest:kakaopay002:1
+      invest:kakaopay001:1
     ```
 
 ## Scenarios - REST APIs
