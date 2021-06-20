@@ -130,6 +130,27 @@
 		]
 		````
 
+* ***`GET /`***
+	* Desc. : for livenessProbe
+		
+## Test Scenarios
+
+* 첨부파일 : [kakaopay.postman_collection.json.zip](https://github.com/uhmhaha/kakaopayServerTest/files/6682556/kakaopay.postman_collection.json.zip)
+
+* 1.  투자상품을 단건 등록한다.( 파일명 : sub1. Create Invest Assets )
+	* ***`POST /investAssets/`***
+
+* 2.  등록된 상품을 확인한다.( 파일명 : sub2. Get a Invest Asset )
+	* ***`GET /investAssets/{id}`***
+
+* 3. 전체 투자 상품을 조회한다.( 파일명 : 1. GET All Invest Assets )
+ 	* ***`GET /investAssets/`***
+
+* 4. 상품에 투자한다.( 파일명 : 2. Request My Invest )
+        * ***`POST /invest/`***
+        
+* 5. 내가 투자한 모든 상품을 조회한다.( 파일명 : 3. Get My Invest Record )
+	* ***`GET /invest/record/`*** 
 
 		
 
