@@ -18,7 +18,7 @@
     * 위 목표와 아래의 요구사항을 만족하는 API 서비스를 자유롭게 정의하여 구현해주시면 됩니다
 
 
-## 핵심 문제해결 전략 및 분석한 내용
+### 핵심 문제해결 전략 및 분석한 내용
     * Database 선정 : Perfomance의 극대화 및 Concurrency 제어를 위해서 REDIS database를 선정 
 	* DB Lock 부분 : Select for update
 		```
@@ -35,7 +35,7 @@
 	    ```
     * 참고 : https://redis.io/topics/transactions
 
-## Scenarios - REST APIs
+### Scenarios - REST APIs
 
 * ***`GET /investAssets/`***
 	* Desc. :
