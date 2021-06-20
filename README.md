@@ -19,8 +19,8 @@
 
 
 ## 핵심 문제해결 전략 및 분석한 내용
-    * 1. Database 선정 : Perfomance의 극대화 및 Concurrency 제어를 위해서 REDIS database를 선정 
-	* 2. DB Lock 부분 : Select for update
+    * Database 선정 : Perfomance의 극대화 및 Concurrency 제어를 위해서 REDIS database를 선정 
+	* DB Lock 부분 : Select for update
 	```
 	    redisOperations.watch(hashKey);
 	    redisOperations.multi();
@@ -28,11 +28,12 @@
 	    redisOperations.exec();
 	    
     ```
-    * 3. Redis key관리 : 일부키를 조회하여 관련 Data를 조회하도록 key 규칙( invest :{userid}:{assetId} )
+    * Redis key관리 : 일부키를 조회하여 관련 Data를 조회하도록 key 규칙( invest :{userid}:{assetId} )
 	```
       invest:kakaopay002:1
       invest:kakaopay001:1
     ```
+    * 참고 : https://redis.io/topics/transactions
 
 ## Scenarios - REST APIs
 
