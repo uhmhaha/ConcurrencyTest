@@ -22,18 +22,11 @@
     * Database 선정 : Perfomance의 극대화 및 Concurrency 제어를 위해서 REDIS database를 선정 
 	* DB Lock 부분 : Select for update
 
-		```
-		redisOperations.watch(hashKey);
-		redisOperations.multi();
-		redisOperations.discard();
-		redisOperations.exec();
-		```
 		
     * Redis key관리 : 일부키를 조회하여 관련 Data를 조회하도록 key 규칙( invest :{userid}:{assetId} )
-		```
-	    invest:kakaopay002:1
-	    invest:kakaopay001:1
-	    ```
+	````
+	test
+	````
     * 참고 : https://redis.io/topics/transactions
 
 ## Scenarios - REST APIs
