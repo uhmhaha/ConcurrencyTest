@@ -6,6 +6,9 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.redis.core.RedisHash;
 import org.springframework.data.redis.core.index.Indexed;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
+
 import lombok.Builder;
 import lombok.Getter;
 import lombok.ToString;
@@ -21,10 +24,11 @@ public class Invest {
 	@Indexed
 	private Long assetId;
 	private Long investAmount;
+	@JsonDeserialize(using=LocalDateTimeDeserializer.class)
 	private LocalDateTime investDate;
 
 	@Builder
-	public Invest(String userId, Long assetId, Long investAmount, LocalDateTime investDate) {
+	public Invest(String userId, Long assetId, Long investAmount,@JsonDeserialize(using=LocalDateTimeDeserializer.class) LocalDateTime investDate) {
 		//this.investId = investId;
 		this.userId = userId;
 		this.assetId = assetId;

@@ -11,7 +11,7 @@ public interface InvestAssetRepository extends CrudRepository<InvestAsset, Long>
     @Override
     List<InvestAsset> findAll();
     
-    List<InvestAsset> findByAssetId(List<Long> AssetIds);
+    @Override
+    List<InvestAsset> findAllById(Iterable<Long> ids);
     
-    Optional<InvestAsset> findByAssetId(Long AssetIds);
 }
