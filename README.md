@@ -4,7 +4,7 @@
 
 ### 프로젝트 개요 
 
-* 프로젝트 명 :  KAKAO Pay Investment
+* 프로젝트 명 :  Pay Investment
 * 개발자 : 양승권
 
 ## 요구사항
